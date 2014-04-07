@@ -8,6 +8,7 @@ var main_state = {
 		// Function called first to load all the assets
           this.game.stage.backgroundColor = "#71c5cf";
           this.game.load.image('bird', 'assets/bird.png');
+          this.game.load.image('pipe', 'assets/pipe.png');
     },
 
     create: function() { 
@@ -22,6 +23,12 @@ var main_state = {
      // Call the 'jump' function when the spacekey is hit
     var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     space_key.onDown.add(this.jump, this);
+
+    //creating pipes
+    this.pipes = game.add.group();  
+    this.pipes.createMultiple(20, 'pipe');
+
+    this.timer = this.game.time.events.loop(1500, this.add_row_of_pipes, this);
     },
     
     update: function() {
@@ -41,6 +48,29 @@ var main_state = {
     restart_game: function() {
      //start the 'main' state, which restarts the game
      this.game.state.start('main');
+
+     this.game.time.events.remove(this.timer);
+    },
+
+    add_one_pipe: function(x, y) {
+     //get the first dead pipe from our group
+     var pipe = this.pipes.getFirstDead();
+
+     //set the position of the pipe
+     pipe.reset(x, y);
+
+     //add velocity to the pipe to make it move left
+     pipe.body.velocity.x = -500;
+
+     pipe.outOfBoundsKill = true;
+    },
+
+    add_row_of_pipes: function() {
+     var hole = Math.floor(Math.random()*5)+1;
+
+     for (var i = 0; i < 8; i++)
+          if (i != hole && i != hole +1)
+               this.add_one_pipe(400, i*60+10);
     }
 };
 
