@@ -18,7 +18,7 @@ var main_state = {
      this.bird = this.game.add.sprite(100, 245, 'bird');
 
      //add gravity to the bird to make the bird fall
-     this.bird.body.gravity.y = 400;
+     this.bird.body.gravity.y = 600;
 
      // Call the 'jump' function when the spacekey is hit
     var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -66,7 +66,7 @@ var main_state = {
      pipe.reset(x, y);
 
      //add velocity to the pipe to make it move left
-     pipe.body.velocity.x = -500;
+     pipe.body.velocity.x = -200;
 
      pipe.outOfBoundsKill = true;
     },
