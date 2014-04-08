@@ -68,6 +68,8 @@ var main_state = {
     this.pipes.forEachAlive(function(p){
         p.body.velocity.x = 0;
     }, this);
+
+    this.jump_sound.play();
     },  
 
     jump: function() {
