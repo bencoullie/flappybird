@@ -69,7 +69,6 @@ var main_state = {
         p.body.velocity.x = 0;
     }, this);
 
-    this.jump_sound.play();
     },  
 
     jump: function() {
