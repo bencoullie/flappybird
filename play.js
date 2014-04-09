@@ -6,6 +6,8 @@ var play_state = {
         var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         space_key.onDown.add(this.jump, this); 
 
+        this.game.input.onDown.add(this.jump, this);
+
         this.pipes = game.add.group();
         this.pipes.createMultiple(20, 'pipe');  
         this.timer = this.game.time.events.loop(1500, this.add_row_of_pipes, this);           
@@ -21,6 +23,9 @@ var play_state = {
 
         this.jump_sound = this.game.add.audio('jump');
         this.background_audio = this.game.add.audio('song') 
+        if (this.background_audio.isPlaying = true) {
+            this.background_audio.stop();
+        };
         this.background_audio.play();
     },
 
