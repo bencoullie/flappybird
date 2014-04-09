@@ -23,9 +23,9 @@ var play_state = {
 
         this.jump_sound = this.game.add.audio('jump');
         this.background_audio = this.game.add.audio('song') 
-        if (this.background_audio.isPlaying = true) {
-            this.background_audio.stop();
-        };
+        if (background_audio.isPlaying = true) {
+            background_audio.stop();
+        };  
         this.background_audio.play();
     },
 
