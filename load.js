@@ -5,6 +5,7 @@ var load_state = {
           this.game.load.image('bird', 'assets/bird.png');
           this.game.load.image('pipe', 'assets/pipe.png');
           this.game.load.audio('jump', 'assets/jump.wav');
+          this.game.load.audio('song', 'assets/Platforming.mp3');
     },
 
     create: function() {
