@@ -21,7 +21,7 @@ var play_state = {
 
         this.jump_sound = this.game.add.audio('jump');
         this.background_audio = this.game.add.audio('song') 
-        this.background_audio.play('assets/Platforming.mp3');
+        this.background_audio.play();
     },
 
     update: function() {
