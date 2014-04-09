@@ -62,7 +62,7 @@ var play_state = {
 
     restart_game: function() {
         this.game.time.events.remove(this.timer);
-        this.game.jump_sound.stop();
+        this.background_audio.stop();
 
         // This time we go back to the 'menu' state
         this.game.state.start('menu');
