@@ -19,6 +19,10 @@ var menu_state = {
             var score_label = this.game.add.text(x, y+50, "score: " + score, style);
             score_label.anchor.setTo(0.5, 0.5); 
         }
+
+        if (background_audio.isPlaying = true) {
+            background_audio.stop();
+        };  
     },
 
     // Start the actual game
