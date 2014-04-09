@@ -23,7 +23,9 @@ var play_state = {
 
         this.jump_sound = this.game.add.audio('jump');
         this.background_audio = this.game.add.audio('song') 
-        
+        // if (this.background_audio.isPlaying = true) {
+        //     this.background_audio.stop();
+        // };
         this.background_audio.play();
     },
 
@@ -60,6 +62,7 @@ var play_state = {
 
     restart_game: function() {
         this.game.time.events.remove(this.timer);
+        this.game.jump_sound.stop();
 
         // This time we go back to the 'menu' state
         this.game.state.start('menu');
